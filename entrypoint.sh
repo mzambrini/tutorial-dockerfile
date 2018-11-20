@@ -6,6 +6,8 @@ if [ "$#" = 0 ]; then
     ARGS= "Ciao mondo!"
 fi
 
+echo "Questo script è eseguito dall'utente $USER"
+
 echo $ARGS
 
 echo $ARGS >> ${OUTPUT_FILE}
