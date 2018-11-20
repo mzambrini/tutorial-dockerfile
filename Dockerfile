@@ -9,9 +9,15 @@ COPY /entrypoint.sh entrypoint.sh
 
 USER 0
 
-RUN echo USER:${USER}  GROUP:${GROUP} && groupadd ${GROUP} && useradd ${USER} -g ${GROUP} -m \
-&& apt-get update && apt-get install -y jq && rm -r /var/lib/apt/lists/* \
-&& mkdir /result && chown ${USER}:${GROUP} entrypoint.sh /result && chmod +x entrypoint.sh 
+RUN \
+groupadd ${GROUP} \
+&& useradd ${USER} -g ${GROUP} -m \
+&& apt-get update \
+&& apt-get install -y jq \
+&& rm -r /var/lib/apt/lists/* \
+&& mkdir /result \
+&& chown ${USER}:${GROUP} entrypoint.sh /result \
+&& chmod +x entrypoint.sh 
 
 USER ${USER}
 
