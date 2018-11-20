@@ -5,8 +5,8 @@ OUTPUT_FILE="/result/output.txt"
 if [ "$#" = 0 ]; then
     ARGS= "Ciao mondo!"
 fi
+id
 
-echo "Questo script è eseguito dall'utente $USER+$UID"
 
 echo $ARGS
 
