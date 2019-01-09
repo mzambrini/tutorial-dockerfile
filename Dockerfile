@@ -12,9 +12,6 @@ USER 0
 RUN \
 groupadd ${GROUP} \
 && useradd ${USER} -g ${GROUP} -m \
-&& apt-get update \
-&& apt-get install -y jq \
-&& rm -r /var/lib/apt/lists/* \
 && mkdir /result \
 && chown ${USER}:${GROUP} entrypoint.sh /result \
 && chmod +x entrypoint.sh 
